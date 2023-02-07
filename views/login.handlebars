@@ -1,40 +1,34 @@
-<div class="row justify-space-between-md">
-  <div class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="login-card">
-    <h2 class="page-title">Signup</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label for="username-signup">Username:</label>
-        <input class="form-input" type="text" id="username-signup" />
-      </div>
-      <div class="form-group">
-        <label for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
+{{!-- Login section --}}
+<section class="text-center download-section content-section" id="download" style="background-image: url('assets/img/downloads-bg.jpg');">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+                <h1>LOGIN</h1>
+                <p>Don't have an account yet? Sign up here.</p>
+                <section class="py-4 py-xl-5">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-6 col-xl-4">
+                                <div class="card mb-5">
+                                    <div class="card-body d-flex flex-column align-items-center">
+                                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4" style="background: var(--bs-gray-900);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                                            </svg></div>
+                                        <form class="text-center" method="post">
+                                            <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                                            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                                            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-gray-900);color: var(--bs-card-bg);">Login</button></div>
+                                            <p class="text-muted">Forgot your password?</p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+{{!-- MUST ADD SIGN UP SECTION --}}
 
 <script src="./js/login.js"></script>
