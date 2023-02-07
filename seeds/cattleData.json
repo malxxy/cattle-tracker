@@ -1,5 +1,6 @@
 [
     {
+        "ownerID": 1,
         "tagID": 1,
         "name": "Betsy",
         "sex": "Female",
@@ -11,6 +12,7 @@
         "notes": "Our first heffer"
     },
     {
+        "ownerID": 1,
         "tagID": 2,
         "name": "Bruce",
         "sex": "Male",
@@ -22,6 +24,7 @@
         "notes": "Our first bull"
     },
     {
+        "ownerID": 1,
         "tagID": 3,
         "sex": "Female",
         "name": "Daisy",
@@ -33,6 +36,7 @@
         "notes": "Our second heffer"
     },
     {
+        "ownerID": 1,
         "tagID": 4,
         "sex": "Male",
         "name": "Thor",
@@ -44,6 +48,7 @@
         "notes": "Our second bull"
     },
     {
+        "ownerID": 1,
         "tagID": 5,
         "sex": "Male",
         "name": "Jason",
@@ -55,6 +60,7 @@
         "notes": "Gentle giant, twin of Simone, ID 6"
     },
     {
+        "ownerID": 2,
         "tagID": 6,
         "sex": "Female",
         "name": "Simone",
@@ -66,6 +72,7 @@
         "notes": "Sweetheart, twin of Jason, ID 5"
     },
     {
+        "ownerID": 2,
         "tagID": 7,
         "sex": "Female",
         "name": "Roberta Jean",
@@ -77,6 +84,7 @@
         "notes": "Big Lady"
     },
     {
+        "ownerID": 2,
         "tagID": 8,
         "sex": "Female",
         "name": "Sue",
@@ -88,6 +96,7 @@
         "notes": "Only has 3 legs"
     },
     {
+        "ownerID": 2,
         "tagID": 9,
         "sex": "Female",
         "name": "Wilma",
@@ -99,6 +108,7 @@
         "notes": "Beautiful spots"
     },
     {
+        "ownerID": 2,
         "tagID": 10,
         "sex": "Male",
         "name": "Cody",
