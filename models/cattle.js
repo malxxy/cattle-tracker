@@ -5,7 +5,12 @@ class Cattle extends Model {}
 
 Cattle.init(
   {
-
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
   },
   {
     sequelize,
@@ -15,4 +20,4 @@ Cattle.init(
   }
 );
 
-module.exports = Post;
+module.exports = Cattle;
