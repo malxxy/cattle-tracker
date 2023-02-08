@@ -1,17 +1,13 @@
 const sequelize = require('../config/connection');
-const { Cattle } = require('../models');
+// const { Cattle } = require('../models');
+const seedCattle = require('./cattleData');
 
-const cattleData = require('./cattleData.json');
-
-const seedDatabase = async () => {
+const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await Cattle.bulkCreate(cattleData, {
-    individualHooks: true,
-    returning: true,
-  });
-
+  await seedCattle(); 
+  
   process.exit(0);
 };
 
-seedDatabase();
+seedAll();
