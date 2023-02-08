@@ -1,5 +1,5 @@
 # cattle-tracker
-Track location of your cattle
+Track location of your live-stock.
 
 ## Decription
 
@@ -24,13 +24,19 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 ## Installation
 
+- To access in terminal make sure to install the necessary packages. 
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+In your integrated terminal enviorment you can follow these steps: 
+- - NPM I 
+- - NPM run seed
+- - NPM start
+- - Node Server
+
 
 
 ## Usage
 
-- Login to access and add to their database of live-stock.
+- Login to access and add to their database of live-stock on the frontend. 
 
 
 ## Credits
@@ -39,6 +45,8 @@ What are the steps required to install your project? Provide a step-by-step desc
 - Lexi Scott | Github @lexi-scott
 - Maislinn Helfer | Github @maislinn
 - Malia Yraguen | Github @malxxy
+
+- UC Berkeley Extension 2023
 
 
 ## License
@@ -53,13 +61,14 @@ MIT License
 
 
 ## Features
-
-
+- Sign up to store your live stock. 
+- Login to access and add to their database of live-stock. 
+- Track your live stock data. 
 
 
 ## How to Contribute
 
-
+Submit your branches for review to contribute your thoughts and features for our live-stock project.
 
 ## Tests
 
