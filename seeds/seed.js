@@ -11,6 +11,14 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  for (const cattle of cattleData) {
+    await cattle.create({
+      ...cattle,
+      cattle_id: cattle[Math.floor(Math.random() * cattle.length)].id,
+    });
+  }
+
+
   process.exit(0);
 };
 
