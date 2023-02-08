@@ -1,113 +1,59 @@
-{{!-- <html lang="en">
+  <html lang="en" style="--bs-primary: #982111;--bs-primary-rgb: 152,33,17;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Herd - Cattle Tracker</title>
+        <meta name="description" content="Track Your Cattle">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+        <script src="https://kit.fontawesome.com/3dc64948f6.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="../../public/css/style.css">
+        {{!-- <link rel="stylesheet" type="text/css" href="../../public/css/jass.css" /> --}}
+        <link rel="stylesheet" href="../../public/css/login-icons.css">
+    </head>
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tech Blog</title>
-    <link rel="stylesheet" type="text/css" href="/css/jass.css" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  </head>
-
-  <body>
-    <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
-        <a href="/dashboard">Dashboard</a>
-        <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-        <a href="/login">Login</a>
-      {{/if}}
+  <body  id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav" style="background: var(--bs-navbar-active-color);">
+        <div class="container"><a class="navbar-brand" href="#">Herd.</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right collapsed" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    {{#if loggedIn}}
+                    {{!-- <li class="nav-item nav-link"><a class="nav-link" href="#login">Login</a></li> --}}
+                    <button id="login" class="btn-no-style">Login</button>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a><a class="nav-link" href="#contact"></a></li>
+                    {{else}}
+                    <li class="nav-item nav-link"><a class="nav-link" href="#logout">Logout</a></li>
+                    <button id="logout" class="btn-no-style">Logout</button>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#myCattle">My Cattle</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#myPigs">My Pigs</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#addLivestock">Add Livestock</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <header>
-      <h1>The Tech Blog</h1>
-    </header>
-
     <main>
-      <div class="gallery">
+      <div class="homepage">
         {{{body}}}
       </div>
     </main>
     {{#if loggedIn}}
       <script src="/js/logout.js"></script>
     {{/if}}
-  </body> --}}
 
-{{!-- </html> --}}
-
-<!DOCTYPE html>
-<html lang="en" style="--bs-primary: #982111;--bs-primary-rgb: 152,33,17;"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Cattle Tracker</title>
-    <meta name="description" content="Track Your Cattle">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
-    {{!-- <link rel="stylesheet" href="assets/fonts/font-awesome.min.css"> --}}
-    <link rel="stylesheet" href="../../public/css/login-icons.css">
-</head>
-
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav" style="background: var(--bs-navbar-active-color);">
-        <div class="container"><a class="navbar-brand" href="#">Herd.</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right collapsed" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item nav-link"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#login">Login</a></li>
-                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">contact</a><a class="nav-link" href="#contact"></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <header class="masthead" style="background-image: url('INSERT URL');">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading" style="margin: 0px 0px 20px;">herd.</h1>
-                        <h6 class="brand-heading" style="font-size: 20px;color: var(--bs-black);">Not your average livestock tracker.</h6>
-                        <p class="intro-text">Manager your livestock from your fingertips. Sign up today for your first 30 days free.</p><a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="text-center content-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>About herd.</h2>
-                    <p>HERD is a full stack web application that allows ranchers to create a unique secure account to track their livestock. Ranchers can add and update detailed information on their cattle including their tagIDs, last known location, age, family relations, and vaccine status.</p>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    {{{ login.handlebars }}}
-
-    <section class="text-center content-section" id="contact" style="color: var(--bs-black);background: var(--bs-white);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Contact us</h2>
-                    <p>Please contact the owner of this GitHub Repository (maliayraguen@gmail.com) for inquiries.</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button" style="background: var(--bs-primary);border-color: var(--bs-primary);color: var(--bs-btn-disabled-color);"><i class="fa fa-github fa-fw"></i><span class="network-name" style="--bs-body-color: var(--bs-btn-disabled-color);">&nbsp;github</span></button></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="map-clean"></div>
-    <footer>
+      <footer>
         <div class="container text-center">
             <p>Copyright ©&nbsp;Cattle Tracker 2023</p>
         </div>
     </footer>
+
+  </body>
+
     {{!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> --}}
     <script src="../../public/js/styling.js"></script>
+    <script src="./js/login.js"></script>
 
-
-</body></html>
+</html>
