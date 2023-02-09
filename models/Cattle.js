@@ -5,11 +5,22 @@ class Cattle extends Model {}
 
 Cattle.init(
   {
-    tag_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
+    },
+    ranchNum: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'ranch',
+        key: 'id',
+      },
+    },
+    tagID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,
@@ -52,8 +63,9 @@ Cattle.init(
   },
   {
     sequelize,
+    timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    underscored: false,
     modelName: 'cattle',
   }
 );

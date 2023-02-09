@@ -1,6 +1,6 @@
 // Cattle Routes
 const router = require('express').Router();
-const { Cattle, User } = require('../../models');
+const { Cattle, User, Ranch } = require('../../models');
 
 // GET all livestock and user data
 router.get('/', async (req, res) => {
