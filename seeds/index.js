@@ -6,11 +6,11 @@ const seedRanches = require('./ranchData');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedCattle(); 
-
-  await seedUsers();
-
   await seedRanches();
+  
+  await seedCattle(); 
+  
+  await seedUsers();
   
   process.exit(0);
 };

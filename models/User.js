@@ -35,6 +35,13 @@ User.init(
         len: [6],
       },
     },
+    ranchNum: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'ranch',
+        key: 'id',
+      },
+    },
   },
   {
     hooks: {
@@ -50,7 +57,7 @@ User.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    underscored: true,
+    underscored: false,
     modelName: 'user',
   }
 );

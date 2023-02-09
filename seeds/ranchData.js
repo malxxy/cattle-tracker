@@ -2,16 +2,16 @@ const { Ranch } = require('../models');
 
 const ranchdata = [
     {
-        "name": "Last Frontier",
+        name: "Last Frontier",
     },
     {
-        "name": "Deseo Ranch",
+        name: "Deseo Ranch",
     },
     {
-        "name": "Avenales Ranch",
+        name: "Avenales Ranch",
     },
     {
-        "name": "Santa Margarita Ranch",
+        name: "Santa Margarita Ranch",
     },
 ];
 
