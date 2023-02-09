@@ -1,1 +1,28 @@
 {{!-- dashboard section --}}
+<h1>DASHBOARD</h1>
+
+<table>
+    <thread>
+        <tr>
+             <td>Your Heard</td>
+        </tr>
+        <tr>
+            {{#each cattle as |cattle|}}
+                <td>{{cattle.tag_id}}</td>
+                <th>Tag ID</th>
+                <td>{{cattle.location}}</td>
+                <th>Location</th>
+                <td>{{cattle.age}}</td>
+                <th>Age</th>
+                <td>{{cattle.family}}</td>
+                <th>Family</th>
+                <td>{{cattle.vaccine}}</td>
+                <th>Vaccine</th>
+            {{/each}}
+        </tr>
+</table>
+    
+    {{!-- end of dashboard section --}}
+    
+    {{!-- footer section --}}
+

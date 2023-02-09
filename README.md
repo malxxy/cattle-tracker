@@ -1,3 +1,4 @@
+
 # cattle-tracker
 Track location of your live-stock.
 
@@ -51,13 +52,9 @@ In your integrated terminal enviorment you can follow these steps:
 
 ## License
 
-MIT License
+Distributed under the MIT License. See LICENSE.txt for more information.
 
 ---
-
-
-## Badges
-
 
 
 ## Features
@@ -68,8 +65,10 @@ MIT License
 
 ## How to Contribute
 
-Submit your branches for review to contribute your thoughts and features for our live-stock project.
+As students and collaborators, we support a learning enviorment. Please feel free to cantribute to our Cattle-Tracking Application. 
 
-## Tests
+If you would like to contribute, please fork our repository and create a pull request. Commit your changes and push your branch to open a pull request. Note: this will require approvals to merge with our main branch. 
+
+
 
 

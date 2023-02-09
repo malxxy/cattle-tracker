@@ -5,14 +5,11 @@ class Cattle extends Model {}
 
 Cattle.init(
   {
-    id: {
+    tag_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-    },
-    tag_id: {
-      type: DataTypes.INTEGER,
     },
     name: {
       type: DataTypes.STRING,
