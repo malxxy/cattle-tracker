@@ -2,7 +2,7 @@ const { Cattle } = require('../models');
 
 const cattledata = [
     {
-        "ownerID": 1,
+        "ranchNum": null,
         "tagID": 1,
         "name": "Betsy",
         "sex": "Female",
@@ -14,7 +14,7 @@ const cattledata = [
         "notes": "Our first heffer"
     },
     {
-        "ownerID": 1,
+        "ranchNum": null,
         "tagID": 2,
         "name": "Bruce",
         "sex": "Male",
@@ -26,7 +26,7 @@ const cattledata = [
         "notes": "Our first bull"
     },
     {
-        "ownerID": 1,
+        "ranchNum": null,
         "tagID": 3,
         "sex": "Female",
         "name": "Daisy",
@@ -38,7 +38,7 @@ const cattledata = [
         "notes": "Our second heffer"
     },
     {
-        "ownerID": 1,
+        "ranchNum": null,
         "tagID": 4,
         "sex": "Male",
         "name": "Thor",
@@ -50,7 +50,7 @@ const cattledata = [
         "notes": "Our second bull"
     },
     {
-        "ownerID": 1,
+        "ranchNum": null,
         "tagID": 5,
         "sex": "Male",
         "name": "Jason",
@@ -62,7 +62,7 @@ const cattledata = [
         "notes": "Gentle giant, twin of Simone, ID 6"
     },
     {
-        "ownerID": 2,
+        "ranchNum": null,
         "tagID": 6,
         "sex": "Female",
         "name": "Simone",
@@ -74,7 +74,7 @@ const cattledata = [
         "notes": "Sweetheart, twin of Jason, ID 5"
     },
     {
-        "ownerID": 2,
+        "ranchNum": null,
         "tagID": 7,
         "sex": "Female",
         "name": "Roberta Jean",
@@ -86,7 +86,7 @@ const cattledata = [
         "notes": "Big Lady"
     },
     {
-        "ownerID": 2,
+        "ranchNum": null,
         "tagID": 8,
         "sex": "Female",
         "name": "Sue",
@@ -98,7 +98,7 @@ const cattledata = [
         "notes": "Only has 3 legs"
     },
     {
-        "ownerID": 2,
+        "ranchNum": null,
         "tagID": 9,
         "sex": "Female",
         "name": "Wilma",
@@ -110,7 +110,7 @@ const cattledata = [
         "notes": "Beautiful spots"
     },
     {
-        "ownerID": 2,
+        "ranchNum": null,
         "tagID": 10,
         "sex": "Male",
         "name": "Cody",
@@ -121,7 +121,7 @@ const cattledata = [
         "currentLocation": "Block 4",
         "notes": "Will be a great dad"
     },
-]
+];
 
 const seedCattle = () => Cattle.bulkCreate(cattledata);
 
