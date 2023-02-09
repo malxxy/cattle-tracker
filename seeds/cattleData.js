@@ -1,6 +1,6 @@
 const { Cattle } = require('../models'); 
 
-const cattleData = [
+const cattledata = [
     {
         "ownerID": 1,
         "tagID": 1,
@@ -120,9 +120,9 @@ const cattleData = [
         "birthday": "2023-02-01",
         "currentLocation": "Block 4",
         "notes": "Will be a great dad"
-    }
+    },
 ]
 
-const seedCattle = () => Cattle.bulkCreate(cattleData);
+const seedCattle = () => Cattle.bulkCreate(cattledata);
 
 module.exports = seedCattle;
