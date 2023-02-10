@@ -79,18 +79,18 @@
         <div class="container"><a class="navbar-brand" href="#">Herd.</a><button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right collapsed" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"><i class="fa fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    {{#if loggedIn}}
-                    <li class="nav-item nav-link"><a class="nav-link" href="#login"><button id="login-btn" class="btn-no-style">Login</button></a></li>
+                    {{#unless loggedIn}}
+                    <li class="nav-item nav-link"><a class="nav-link" href="#login">Login</a></li>
                     
                     <li class="nav-item nav-link"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item nav-link"><a class="nav-link" href="#contact">Contact</a><a class="nav-link" href="#contact"></a></li>
                     {{else}}
-                    <li class="nav-item nav-link"><a class="nav-link" href="#logout">Logout</a></li>
-                    <button id="logout" class="btn-no-style">Logout</button>
+                    <li class="nav-item nav-link"><a class="nav-link" href="/dashboard">My Dashboard</a></li>
+                            <button id="logout" class="btn-no-style">Logout</button>
                     <li class="nav-item nav-link"><a class="nav-link" href="#myCattle">My Cattle</a></li>
                     <li class="nav-item nav-link"><a class="nav-link" href="#myPigs">My Pigs</a></li>
                     <li class="nav-item nav-link"><a class="nav-link" href="#addLivestock">Add Livestock</a></li>
-                    {{/if}}
+                    {{/unless}}
                 </ul>
             </div>
         </div>
@@ -101,11 +101,11 @@
         {{{div}}}
       </div>
     </main>
-    {{#if loggedIn}}
+    {{!-- {{#if loggedIn}}
       <script src="../../public/js/logout.js"></script>
     {{else}}
       <script src="../../public/js/login.js"></script>
-    {{/if}}
+    {{/if}} --}}
     
     <footer>
         <div class="container text-center">
@@ -114,6 +114,7 @@
     </footer>
     <script src="../../public/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../../public/assets/jsTheme/grayscale.js"></script>
+    <script src="/js/logout.js"></script>
 
 
 </body>
