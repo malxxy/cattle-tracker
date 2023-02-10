@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 // GET homepage
 router.get('/', async (req, res) => {
+  console.log(req.session.loggedIn)
     try {
       res.render('homepage', {
         loggedIn: req.session.loggedIn,
@@ -12,14 +13,16 @@ router.get('/', async (req, res) => {
     }
   });
 
-// GET login page
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('login');
-  });
+  // GET Dashboard Page
+router.get('/dashboard', async (req, res) => {
+  try {
+    res.render('dashboard', {
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
