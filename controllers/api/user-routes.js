@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const { Ranch } = require('../../models');
 
 // CREATE new user
 router.post('/', async (req, res) => {
@@ -15,14 +16,21 @@ router.post('/', async (req, res) => {
       where: {
         email: req.body.email,
       },
+      include: [
+        {
+          model: Ranch
+        },
+      ],
     });
 
-    console.log(dbUserData)
+    console.log(dbUserData.id)
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.id  = dbUserData.id;
-      req.session.name = dbUserData.name
+      req.session.userId  = dbUserData.id;
+      req.session.name = dbUserData.name;
+      req.session.ranchNum = dbUserData.ranchNum;
+      req.session.ranch = dbUserData.ranch;
 
       res.status(200).json(dbUserData);
     });
@@ -39,6 +47,11 @@ router.post('/login', async (req, res) => {
       where: {
         email: req.body.email,
       },
+      include: [
+        {
+          model: Ranch
+        },
+      ],
     });
 
     if (!dbUserData) {
@@ -56,11 +69,15 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
+
+    console.log(dbUserData)
     
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.id  = dbUserData.id;
-      req.session.name = dbUserData.name
+      req.session.userId  = dbUserData.id;
+      req.session.name = dbUserData.name;
+      req.session.ranchNum = dbUserData.ranchNum;
+      req.session.ranch = dbUserData.ranch;
       res
         .status(200)
         .json(dbUserData);
