@@ -9,18 +9,54 @@
         </tr>
         <tr>
             {{#each cattle as |cattle|}}
-                <td>{{cattle.tag_id}}</td>
+                <td>{{cattle}}</td>
                 <th>Tag ID</th>
-                <td>{{cattle.location}}</td>
+                <td>{{cattle}}</td>
                 <th>Location</th>
-                <td>{{cattle.age}}</td>
+                <td>{{cattle}}</td>
                 <th>Age</th>
-                <td>{{cattle.family}}</td>
+                <td>{{cattle}}</td>
                 <th>Family</th>
-                <td>{{cattle.vaccine}}</td>
+                <td>{{cattle}}</td>
                 <th>Vaccine</th>
             {{/each}}
         </tr>
         
 </table>
     
+    {{!-- Code to work off
+     <div id="myCattle" class="container py-4 py-xl-5">
+                    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body p-4" style="border-color: var(--bs-gray-dark);background: var(--bs-gray-900);--bs-primary: #982111;--bs-primary-rgb: 152,33,17;">
+                                    <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="fas fa-hat-cowboy"></i></div>
+                                    <h4 class="card-title" style="text-align: justify;">COw</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span>tagID:&nbsp;&nbsp;</span></li>
+                                        <li class="list-group-item"><span>Location:&nbsp;</span><span></span></li>
+                                        <li class="list-group-item"><span>Block:&nbsp;</span><span></span></li>
+                                        <li class="list-group-item"><span>Family:&nbsp;</span><span></span></li>
+                                        <li class="list-group-item"><span></span></li>
+                                    </ul>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body p-4" style="background: var(--bs-gray-900);">
+                                    <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center d-inline-block mb-3 bs-icon"><i class="fas fa-hat-cowboy"></i></div>
+                                    <h4 class="card-title" style="text-align: left;">Cow</h4>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><span>tagID:&nbsp;&nbsp;</span></li>
+                                        <li class="list-group-item"><span>Location:&nbsp;</span></li>
+                                        <li class="list-group-item"><span>Block:</span></li>
+                                        <li class="list-group-item"><span>Family:&nbsp;</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
