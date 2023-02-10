@@ -1,0 +1,18 @@
+{{!-- dashboard section --}}
+
+<h1>CATTLE BOARD</h1>
+
+{{#each cattle as |cattle|}}
+    <div class="cattle-card">
+        <h2>{{cattle.tag_id}}</h2>
+        <p>Location: {{cattle.location}}</p>
+        <p>Age: {{cattle.age}}</p>
+        <p>Family: {{cattle.family}}</p>
+        <p>Vaccine: {{cattle.vaccine}}</p>
+    </div>
+{{/each}}
+
+{{!-- dashboard section --}}
+
+
+    
