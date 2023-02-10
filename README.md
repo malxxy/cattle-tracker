@@ -51,10 +51,7 @@ In your integrated terminal enviorment you can follow these steps:
 
 ## License
 
-MIT License
-
----
-
+Distributed under the MIT License. See LICENSE.txt for more information.
 
 ## Badges
 
@@ -68,8 +65,14 @@ MIT License
 
 ## How to Contribute
 
-Submit your branches for review to contribute your thoughts and features for our live-stock project.
+As UC Berkeley students and tech professional, we want to learn and continue to create. Please feel free to contribute your ideas and code by reaching out to the collaborators or follow the steps below to submit a pull request for approval. 
 
+    1. Fork our Repo
+    2. Create your Branch (git checkout -b )
+    3. Make your own Adjustments 
+    4. Commit your changes (git commit -m "")  
+    5. Push to the branch 
+    6. Open a pull request on GitHub
 ## Tests
 
 

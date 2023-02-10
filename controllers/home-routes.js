@@ -34,16 +34,37 @@ router.get('/dashboard', async (req, res) => {
   }
 });
 
-  // GET Cattle Page
-  router.get('/cattle', async (req, res) => {
+// GET Cattle Page
+router.get("/cattle", async (req, res) => {
+    if (!req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+
     try {
-      res.render('cattle', {
+      const {username, user_id, loggedIn, ranchNum} = req.session
+      const cattleData = await Cattle.findAll({
+        where: {
+          ranchNum: ranchNum
+        }
+      })
+      console.log(cattleData)
+
+      const cattleDatapretty = cattleData.map((post) =>
+      post.get({ plain: true })
+      );
+
+      res.render("Cattle", {
+        cattleDatapretty,
         loggedIn: req.session.loggedIn,
       });
+      console.log(cattleDatapretty)
+
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
-  });
+});
 
+});
 module.exports = router;
