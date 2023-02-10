@@ -1,0 +1,26 @@
+{{!-- Table Layout Section --}}
+
+<h1>YOUR HERD </h1>
+
+<table>
+    <thread>
+        <tr>
+             <td>{{user_ID}}</td>
+        </tr>
+        <tr>
+            {{#each cattle as |cattle|}}
+                <td>{{cattle.tag_id}}</td>
+                <th>Tag ID</th>
+                <td>{{cattle.location}}</td>
+                <th>Location</th>
+                <td>{{cattle.age}}</td>
+                <th>Age</th>
+                <td>{{cattle.family}}</td>
+                <th>Family</th>
+                <td>{{cattle.vaccine}}</td>
+                <th>Vaccine</th>
+            {{/each}}
+        </tr>
+        
+</table>
+    
