@@ -29,8 +29,6 @@ router.get("/", async (req, res) => {
 router.get("/dashboard", async (req, res) => {
   try {
     console.log(req.session.userId)
-
-    
     res.render("dashboard", {
       loggedIn: req.session.loggedIn,
       userId: req.session.userId,
@@ -46,7 +44,6 @@ router.get("/dashboard", async (req, res) => {
 
 // GET Cattle Page
 router.get("/cattle", async (req, res) => {
-
     if (!req.session.loggedIn) {
       res.redirect('/');
       return;
@@ -78,5 +75,4 @@ router.get("/cattle", async (req, res) => {
 
 });
 
-});
 module.exports = router;
