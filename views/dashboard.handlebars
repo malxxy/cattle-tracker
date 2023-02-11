@@ -1,11 +1,26 @@
 <div>
-    <h1 class="dashboard">My Livestock Dashboard</h1>
-    <p>Hello {{ name }}, welcome to your livestock dashboard. Select the buttons below to get started.</p>
-
+    <header
+    class="masthead"
+    style="background-image: url('assets/img/intro-bg.jpg');">
+    <div class="intro-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h1 class="brand-heading" style="margin: 0px 0px 20px;">My Dashboard</h1>
+            <h3
+              class="brand-heading"
+              style="font-size: 20px;color: var(--bs-black);"
+            >Not your average livestock tracker.</h6>
+            <p class="intro-text">Hello {{ name }}, welcome to your livestock dashboard. Select the buttons below to get started.</p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
         <div class="btn-group" role="group">
             <button class="btn btn-primary" type="button" style="background: var(--primary);border-color: var(--primary)">My Livestock</button>
             <button class="btn btn-primary" type="button" style="background: var(--primary);border-color: var(--primary)">Add Livestock</button>
         </div>
     </div>
+  </header>
 </div>
