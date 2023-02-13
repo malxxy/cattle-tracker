@@ -14,7 +14,7 @@ const currentLocation = document.querySelector('#currentLocation').value.trim();
 const notes = document.querySelector('#notes').value.trim();
 const vaccine = document.querySelector('#vaccine:checked') ? true : false;
 
-const response = await fetch('/api/users/cattle', {
+const response = await fetch('/cattle', {
     method: 'POST',
     body: JSON.stringify({
         ranchNum,
