@@ -1,54 +1,77 @@
 {{!-- dashboard section --}}
 
-<h1>CATTLE BOARD</h1>
+{{!-- <h1>CATTLE BOARD</h1> --}}
 
-{{#each cattle as |cattle|}}
-    <div class="cattle-card">
-        <h2>{{cattle}}</h2>
-        <p>Location: {{cattle}}</p>
-        <p>Age: {{cattle}}</p>
-        <p>Family: {{cattle}}</p>
-        <p>Vaccine: {{cattle.vaccine}}</p>
-    </div>
-{{/each}}
+{{!-- {{#each cattle as |cattle|}}
+<div class="cattle-card">
+    <h2>Cattle ID: {{cattle.tagID}}</h2>
+    <p>Location: {{cattle.currentLocation}}</p>
+    <p>Age: {{cattle.birthday}}</p>
+    <p>Family:
+        Mother Tag #: {{cattle.motherID}}
+        Father Tag #: {{cattle.fatherID}}
+    </p>
+    {{#if cattle.vaccinated}}
+    <p>Vaccinated: Yes</p>
+    {{/if}}
+</div>
+{{/each}} --}}
 
-    {{!-- Code to work off 
-    <section>
-            <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h1>Add Livestock</h1>
-                <section class="py-4 py-xl-5">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-md-6 col-xl-4">
-                                <div class="card mb-5">
-                                    <div class="card-body d-flex flex-column align-items-center">
-                                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4" style="background: var(--bs-primary);"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
-                                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
-                                            </svg></div>
-                                        <form class="login-form text-center" method="post">
-                                            <div class="mb-3"><input id="ranchNum" class="form-control" type="input" name="ranchNum" placeholder="Ranch Number"></div>
-                                            <div class="mb-3"><input id="tagID" class="form-control" type="input" name="tagID" placeholder="Tag ID Number"></div>
-                                            <div class="mb-3"><input id="=name"class="form-control" type="input" name="name" placeholder="Name"></div>
-                                            <div class="mb-3"><input id="sex" class="form-control" type="input" name="sex" placeholder="Sex"></div>
-                                            <div class="mb-3"><input id="=vaccine"class="form-control" type="input" name="vaccine" placeholder="Vaccine Status"></div>
-                                            <div class="mb-3"><input id="fatherID" class="form-control" type="input" name="fatherID" placeholder="Father ID Number"></div>
-                                            <div class="mb-3"><input id="=motherID"class="form-control" type="input" name="motherID" placeholder="Mother ID Number"></div>
-                                            <div class="mb-3"><input id="birthday" class="form-control" type="input" name="birthday" placeholder="Birthday"></div>
-                                            <div class="mb-3"><input id="=currentLocation"class="form-control" type="input" name="currentLocation" placeholder="Current Location Block"></div>
-                                            <div class="mb-3"><input id="birthday" class="form-control" type="input" name="birthday" placeholder="Birthday"></div>
-                                            <div class="mb-3"><button id="submit-animal" class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-primary);color: var(--bs-card-bg);">Submit</button></div>
-                                        </form>
-                                    </div>
+{{!-- Code to work off --}}
+<section>
+    <div class="container">
+        <div class="col-lg-8 mx-auto">
+            <h1>Add Livestock</h1>
+            <section class="py-4 py-xl-5">
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="card mb-5">
+                                <div class="card-body d-flex flex-column align-items-center">
+                                    <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"
+                                        style="background: var(--bs-primary);"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+                                            class="bi bi-person">
+                                            <path
+                                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z">
+                                            </path>
+                                        </svg></div>
+                                    {{!-- start of form --}}
+                                    <form class="livestock-form text-center" method="post">
+                                        <div class="mb-3"><input id="ranchNum" class="form-control" type="input"
+                                                name="ranchNum" placeholder="Ranch Number"></div>
+                                        <div class="mb-3"><input id="tagID" class="form-control" type="input"
+                                                name="tagID" placeholder="Tag ID Number"></div>
+                                        <div class="mb-3"><input id="name" class="form-control" type="input" name="name"
+                                                placeholder="Name"></div>
+                                        <div class="mb-3"><input id="sex" class="form-control" type="input" name="sex"
+                                                placeholder="Sex"></div>
+                                        <div class="mb-3"><input id="fatherID" class="form-control" type="input"
+                                                name="fatherID" placeholder="Father ID Number"></div>
+                                        <div class="mb-3"><input id="motherID" class="form-control" type="input"
+                                                name="motherID" placeholder="Mother ID Number"></div>
+                                        <div class="mb-3"><input id="birthday" class="form-control" type="input"
+                                                name="birthday" placeholder="Birthday"></div>
+                                        <div class="mb-3"><input id="currentLocation" class="form-control" type="input"
+                                                name="currentLocation" placeholder="Current Location/Block"></div>
+                                        <div class="mb-3"><input id="notes" class="form-control" type="input"
+                                                name="notes" placeholder="Additional notes"></div>
+                                        <div class="mb-3"><input id="=vaccine" type="checkbox" value="true"
+                                                name="vaccine" /> <label for="vaccine">Check box if vaccinated</label>
+                                        </div>
+                                        <div class="mb-3"><button id="submit-animal"
+                                                class="btn btn-primary d-block w-100" type="submit"
+                                                style="background: var(--bs-primary);color: var(--bs-card-bg);">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
-    </section>
-    --}}
+    </div>
+</section>
 
-
-    
+<script src="/js/addCattle.js"
