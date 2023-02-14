@@ -3,6 +3,7 @@ const Cattle = require('../../models/Cattle');
 
 //CREATE new livestock
 router.post('/', async (req, res) => {
+    console.log(req)
     try {
         const cattleInput = await Cattle.create({
             ranchNum: req.body.ranchNum,

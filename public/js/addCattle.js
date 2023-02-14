@@ -12,21 +12,23 @@ const motherID = document.querySelector('#motherID').value.trim();
 const birthday = document.querySelector('#birthday').value.trim();
 const currentLocation = document.querySelector('#currentLocation').value.trim();
 const notes = document.querySelector('#notes').value.trim();
-const vaccine = document.querySelector('#vaccine:checked') ? true : false;
+const vaccine = document.querySelector('#vaccine:checked') ? false : true;
 
-const response = await fetch('/cattle', {
+console.log(ranchNum, tagID, name, sex, fatherID, motherID, birthday, currentLocation, notes, vaccine)
+
+const response = await fetch('/api/cattle', {
     method: 'POST',
     body: JSON.stringify({
         ranchNum,
         tagID,
         name,
         sex,
+        vaccine,
         fatherID,
         motherID,
         birthday,
         currentLocation,
         notes,
-        vaccine,
     }), 
     headers: {
         'Content-Type': 'application/json'
