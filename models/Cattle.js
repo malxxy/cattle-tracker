@@ -31,7 +31,7 @@ Cattle.init(
       allowNull: false,
     },
     vaccine: {
-      type: DataTypes.STRING,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
     },
     fatherID: {
@@ -49,13 +49,12 @@ Cattle.init(
       },
     },
     birthday: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: DataTypes.NOW,
     },
     currentLocation: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     notes: {
       type: DataTypes.STRING,
