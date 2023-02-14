@@ -1,30 +1,27 @@
-async function showLivestock() {
-    const response = await fetch('/api/cattle-routes', {
-      method: 'GET',
-      headers: { 'Cattle': 'application/json' },
-    });
-  
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert('Failed to show livestock page.');
-    }
-  }
+async function showLivestock(e) {
+    e.preventDefault();
+    console.log("button clicked")
+    app.get('/', (req, res) => {
+        if (response.ok) {
+        res.render('table-layout', {layout : 'table-layout'});
+        } else {
+            alert('Failed to show livestock page.');
+        }
+    })
+  };
 
-// Need handlebars done for add livestock page
-//   async function addLivestock() {
-//     const response = await fetch('/api/cattle', {
-//       method: 'POST',
-//       headers: { 'Cattle': 'application/json' },
-//     });
-  
-//     if (response.ok) {
-//       document.location.replace('/');
-//     } else {
-//       alert('Failed to load add livestock page');
-//     }
-//   }
-  
+   async function addLivestock(e) {
+    e.preventDefault();
+    console.log("button clicked")
+    app.get('/', (req, res) => {
+        if (response.ok) {
+        res.render('cattle', {layout : 'cattle'});
+        } else {
+            alert('Failed to show livestock page.');
+        }
+    })
+   };
+
 // Upon clicking My Livestock, take to My Livestock partial handlebars page
 document.querySelector('#my-livestock-btn').addEventListener('click', showLivestock);
 // Upon clicking add Livestock, take to add Livestock handlebars page
