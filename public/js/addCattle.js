@@ -3,20 +3,24 @@ const livestockFormHandler = async (event) => {
 
     console.log("hello cows")
 
-const ranchNum = document.querySelector('#ranchNum').value.trim();
-const tagID = document.querySelector('#tagID').value.trim();
+const ranchNumhtml = document.querySelector('#ranchNum').value.trim();
+const ranchNum = parseInt(ranchNumhtml);
+const tagIDhtml = document.querySelector('#tagID').value.trim();
+const tagID = parseInt(tagIDhtml);
 const name = document.querySelector('#name').value.trim();
 const sex = document.querySelector('#sex').value.trim();
-const fatherID = document.querySelector('#fatherID').value.trim();
-const motherID = document.querySelector('#motherID').value.trim();
+const fatherIDhtml = document.querySelector('#fatherID').value.trim();
+const fatherID = parseInt(fatherIDhtml);
+const motherIDhtml = document.querySelector('#motherID').value.trim();
+const motherID = parseInt(motherIDhtml);
 const birthday = document.querySelector('#birthday').value.trim();
 const currentLocation = document.querySelector('#currentLocation').value.trim();
 const notes = document.querySelector('#notes').value.trim();
-const vaccine = document.querySelector('#vaccine:checked') ? false : true;
+const vaccine = document.querySelector('#vaccine:checked') ? true : false;
 
 console.log(ranchNum, tagID, name, sex, fatherID, motherID, birthday, currentLocation, notes, vaccine)
 
-const response = await fetch('/api/cattle', {
+const response = await fetch('/api/addCattle', {
     method: 'POST',
     body: JSON.stringify({
         ranchNum,
@@ -36,7 +40,7 @@ const response = await fetch('/api/cattle', {
 });
 console.log(response);
 if (response.ok) {
-    document.location.replace('/cattle')
+    document.location.replace('/')
 } else {
     alert("Failed to add livestock")
     }
