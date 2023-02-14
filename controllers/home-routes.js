@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { User, Cattle } = require('../models');
 
 // GET homepage
 router.get("/", async (req, res) => {
@@ -62,7 +63,7 @@ router.get("/cattle", async (req, res) => {
       post.get({ plain: true })
       );
 
-      res.render("Cattle", {
+      res.render("cattle", {
         cattleDatapretty,
         loggedIn: req.session.loggedIn,
       });
