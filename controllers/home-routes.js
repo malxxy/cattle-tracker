@@ -44,36 +44,48 @@ router.get("/dashboard", async (req, res) => {
 });
 
 // GET Cattle Page
-router.get("/cattle", async (req, res) => {
-    if (!req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
+router.get("/addCattle", async (req, res) => {
+    // if (!req.session.loggedIn) {
+    //   res.redirect('/');
+    //   return;
+    // }
 
     try {
-      const {username, user_id, loggedIn, ranchNum} = req.session
-      const cattleData = await Cattle.findAll({
-        where: {
-          ranchNum: ranchNum
-        }
-      })
-      console.log(cattleData)
-
-      const cattleDatapretty = cattleData.map((post) =>
-      post.get({ plain: true })
-      );
-
-      res.render("cattle", {
-        cattleDatapretty,
+      console.log(req.session.userId)
+      res.render("addCattle", {
         loggedIn: req.session.loggedIn,
+        userId: req.session.userId,
+        name: req.session.name,
+        ranchNum: req.session.ranchNum,
+        ranch: req.session.ranch
       });
-      console.log(cattleDatapretty)
-
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
 
+    // try {
+    //   const {username, user_id, loggedIn, ranchNum} = req.session
+    //   const cattleData = await Cattle.findAll({
+    //     where: {
+    //       ranchNum: ranchNum
+    //     }
+    //   })
+    //   console.log(cattleData)
+
+    //   const cattleDatapretty = cattleData.map((post) =>
+    //   post.get({ plain: true })
+    //   );
+
+      // res.render("addCattle", {
+      //   loggedIn: req.session.loggedIn,
+      // });
+      // console.log(cattleDatapretty)
+
+    // } catch (err) {
+    //   console.log(err);
+    //   res.status(500).json(err);
+    // })
 });
 
 module.exports = router;
