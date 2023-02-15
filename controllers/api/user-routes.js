@@ -1,17 +1,14 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const { Ranch } = require('../../models');
-const _ = require('lodash');
+// const _ = require('lodash');
 
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
     console.log(req.body)
-    const lowerName = req.body.username;
-    const capitalName = _.capitalize(lowerName);
-    console.log("User's name capitalized", capitalName);
-    await User.create({
-      name: capitalName,
+    const newUserData = await User.create({
+      name: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
