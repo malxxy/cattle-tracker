@@ -27,16 +27,20 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  // Add ranch name
+  const ranchName = document.querySelector('#ranch-signup').value.trim();
+  console.log("ranch name",ranchName);
 
 
-  if (username && email && password) {
+  if (username && email && password && ranchName) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password, ranchName }), // added ranch name
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
+      console.log("POSTED RANCH NAME!");
       document.location.replace('/dashboard');
     } else {
       alert('Failed to sign up.');
