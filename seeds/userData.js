@@ -11,19 +11,19 @@ const userdata = [
       name: "Malia",
       email: "Malia@mail.com",
       password: "password12345",
-      ranchNum: 2,
+      ranchNum: 1,
     },
     {
       name: "Josh",
       email: "Josh@mail.com",
       password: "password12345",
-      ranchNum: 3,
+      ranchNum: 1,
     },
     {
       name: "Lexi",
       email: "Lexi@mail.com",
       password: "password12345",
-      ranchNum: 4,
+      ranchNum: 1,
     },
   ];
 
