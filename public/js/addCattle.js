@@ -1,9 +1,11 @@
+// document.getElementByID("ranchID").style.display = "none";
+
 const livestockFormHandler = async (event) => {
     event.preventDefault();
 
     console.log("hello cows")
-
-const ranchNumhtml = document.querySelector('#ranchNum').value.trim();
+const ranchNumEl = document.querySelector("#ranchID");
+const ranchNumhtml = ranchNumEl.innerHTML
 const ranchNum = parseInt(ranchNumhtml);
 const tagIDhtml = document.querySelector('#tagID').value.trim();
 const tagID = parseInt(tagIDhtml);
@@ -40,7 +42,7 @@ const response = await fetch('/api/addCattle', {
 });
 console.log(response);
 if (response.ok) {
-    document.location.replace('/')
+    document.location.replace('/viewCattle')
 } else {
     alert("Failed to add livestock")
     }

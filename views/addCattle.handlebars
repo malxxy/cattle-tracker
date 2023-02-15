@@ -1,21 +1,4 @@
-{{!-- dashboard section --}}
-
-{{!-- <h1>CATTLE BOARD</h1> --}}
-
-{{!-- {{#each cattle as |cattle|}}
-<div class="cattle-card">
-    <h2>Cattle ID: {{cattle.tagID}}</h2>
-    <p>Location: {{cattle.currentLocation}}</p>
-    <p>Age: {{cattle.birthday}}</p>
-    <p>Family:
-        Mother Tag #: {{cattle.motherID}}
-        Father Tag #: {{cattle.fatherID}}
-    </p>
-    {{#if cattle.vaccinated}}
-    <p>Vaccinated: Yes</p>
-    {{/if}}
-</div>
-{{/each}} --}}
+<h1 id="ranchID"> {{ranchNum}}</h1>
 
 {{!-- Code to work off --}}
 <section>
@@ -38,8 +21,8 @@
                                         </svg></div>
                                     {{!-- start of form --}}
                                     <form class="livestock-form text-center" method="post">
-                                        <div class="mb-3"><input id="ranchNum" class="form-control" type="input"
-                                                name="ranchNum" placeholder="Ranch Number"></div>
+                                        {{!-- <div class="mb-3"><input id="ranchNum" class="form-control" type="input"
+                                                name="ranchNum" placeholder="Ranch Number"></div> --}}
                                         <div class="mb-3"><input id="tagID" class="form-control" type="input"
                                                 name="tagID" placeholder="Tag ID Number"></div>
                                         <div class="mb-3"><input id="name" class="form-control" type="input" name="name"
