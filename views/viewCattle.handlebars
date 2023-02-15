@@ -5,7 +5,6 @@
 {{! Path: views/viewCattle.handlebars }}
 
 <div style="--bs-primary: #982111;--bs-primary-rgb: 152,33,17;">
-
     <header
     class="masthead"
     style="background-image: url('assets/img/intro-bg.jpg');">
@@ -20,8 +19,7 @@
             Hello {{ name }}, View Your Cattle Below</h3>
             </div>
                 <tbody>
-                    {{#each cattle.Data as |row|}}
-                    {{#each-in row as |key value|}}
+                    {{#each prettycows}}
                     <tr>
                         <td>{{tagID}}</td>
                         <td>{{name}}</td>
@@ -33,7 +31,6 @@
                         <td>{{currentLocation}}</td>
                         <td>{{notes}}</td>
                     </tr>
-                    {{/each-in}}
                     {{/each}}
                 </tbody>
 
