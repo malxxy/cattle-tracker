@@ -5,11 +5,22 @@ const { Ranch } = require('../../models');
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
-    console.log(req.body)
+    
+    const newRanchData = await Ranch.create({
+      name: req.body.ranchName,
+    });
+
+    const dbRanchData = await Ranch.findOne({
+      where: {
+        name: req.body.ranchName,
+      }
+    })
+
     const newUserData = await User.create({
       name: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      ranchNum: dbRanchData.dataValues.id
     });
 
     const dbUserData = await User.findOne({
@@ -22,8 +33,6 @@ router.post('/', async (req, res) => {
         },
       ],
     });
-
-    console.log(dbUserData.id)
 
     req.session.save(() => {
       req.session.loggedIn = true;
