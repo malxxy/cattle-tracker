@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { User, Cattle } = require("../models");
+const { Cattle } = require("../models");
 
 // GET homepage
 router.get("/", async (req, res) => {
-  console.log(req.session.loggedIn);
+
   try {
     res.render("homepage", {
       loggedIn: req.session.loggedIn,
@@ -27,7 +27,6 @@ router.get("/dashboard", async (req, res) => {
   }
   
   try {
-    console.log(req.session.userId);
     res.render("dashboard", {
       loggedIn: req.session.loggedIn,
       userId: req.session.userId,
@@ -41,7 +40,7 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-// GET Cattle Page
+// GET addCattle Page
 router.get("/addCattle", async (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/');
@@ -49,7 +48,6 @@ router.get("/addCattle", async (req, res) => {
   }
 
   try {
-    console.log(req.session.userId);
     res.render("addCattle", {
       loggedIn: req.session.loggedIn,
       userId: req.session.userId,
