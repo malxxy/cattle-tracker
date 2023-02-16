@@ -41,6 +41,48 @@ router.post('/', async (req, res) => {
   }
 });
 
+// CREATE new ranch - Malia's route attempt
+router.post('/', async (req, res) => {
+  try {
+    console.log(req.body)
+    const newRanchData = await Ranch.create({
+      name: req.body.ranchName,
+    });
+
+    const dbRanchData = await Ranch.findOne({
+      where: {
+        name: req.body.ranchName,
+      },
+      include: [
+        {
+          model: Ranch
+        },
+      ],
+   
+    });
+
+    console.log("ranch data",dbRanchData)
+    console.log("RANCH NAME",dbUserData.ranch)
+
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      req.session.userId  = dbUserData.id;
+      req.session.name = dbUserData.name;
+      req.session.ranchNum = dbUserData.ranchNum;
+      req.session.ranch = dbUserData.ranch;
+      req.session.name = dbRanchData.name;
+      
+      console.log(dbRanchData.name)
+      res.status(200).json(dbUserData);
+      res.status(200).json(dbRanchData);
+      console.log("All ranch data",dbRanchData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Login
 router.post('/login', async (req, res) => {
   try {
