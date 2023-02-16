@@ -1,16 +1,26 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 const { Ranch } = require('../../models');
-// const _ = require('lodash');
 
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
-    console.log(req.body)
+    
+    const newRanchData = await Ranch.create({
+      name: req.body.ranchName,
+    });
+
+    const dbRanchData = await Ranch.findOne({
+      where: {
+        name: req.body.ranchName,
+      }
+    })
+
     const newUserData = await User.create({
       name: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      ranchNum: dbRanchData.dataValues.id
     });
 
     const dbUserData = await User.findOne({
@@ -24,8 +34,6 @@ router.post('/', async (req, res) => {
       ],
     });
 
-    console.log(dbUserData.id)
-
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.userId  = dbUserData.id;
@@ -34,48 +42,6 @@ router.post('/', async (req, res) => {
       req.session.ranch = dbUserData.ranch;
 
       res.status(200).json(dbUserData);
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// CREATE new ranch - Malia's route attempt
-router.post('/', async (req, res) => {
-  try {
-    console.log(req.body)
-    const newRanchData = await Ranch.create({
-      name: req.body.ranchName,
-    });
-
-    const dbRanchData = await Ranch.findOne({
-      where: {
-        name: req.body.ranchName,
-      },
-      include: [
-        {
-          model: Ranch
-        },
-      ],
-   
-    });
-
-    console.log("ranch data",dbRanchData)
-    console.log("RANCH NAME",dbUserData.ranch)
-
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      req.session.userId  = dbUserData.id;
-      req.session.name = dbUserData.name;
-      req.session.ranchNum = dbUserData.ranchNum;
-      req.session.ranch = dbUserData.ranch;
-      req.session.name = dbRanchData.name;
-      
-      console.log(dbRanchData.name)
-      res.status(200).json(dbUserData);
-      res.status(200).json(dbRanchData);
-      console.log("All ranch data",dbRanchData);
     });
   } catch (err) {
     console.log(err);
