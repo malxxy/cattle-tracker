@@ -10,6 +10,8 @@ router.post('/', async (req, res) => {
     const capitalName = _.capitalize(lowerName);
     const lowerSex = req.body.sex;
     const capitalSex = _.capitalize(lowerSex);
+    const lowerCurrentLocation = req.body.currentLocation;
+    const capitalCurrentLocation = _.capitalize(lowerCurrentLocation);
     try {
         const cattleInput = {
             ranchNum: req.body.ranchNum,
@@ -20,7 +22,7 @@ router.post('/', async (req, res) => {
             fatherID: req.body.fatherID,
             motherID: req.body.motherID,
             birthday: req.body.birthday,
-            currentLocation: req.body.currentLocation,
+            currentLocation: capitalCurrentLocation,
             notes: req.body.notes
         }
 
