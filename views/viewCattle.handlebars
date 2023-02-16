@@ -17,14 +17,15 @@
               style="font-size: 20px;color: var(--bs-black);">
             Hello {{ name }}, View Your Cattle Below</h3>
             </div>
-            <table id=“cattle.DataTable” class=“table table-striped table-bordered” style='width:100%;background-color:rgba(255, 255, 255, 0.513);'>
+            <input type="text" id="searchInput" onkeyup="searchLocation()" placeholder="Search by Location" style="background-color:rgb(47, 79, 79);width:100%;border-radius:3px;font-family:lora">
+            <table id="cattle.DataTable" class=“table table-striped table-bordered” style='width:100%;background-color:rgba(255, 255, 255, 0.513);border-radius:3px'>
               <thead>
                 <th>Tag ID</th>
                 <th>Name</th>
                 <th>Sex</th>
-                <th>Vaccine</th>
-                <th>Father ID</th>
-                <th>Mother ID</th>
+                <th>Vaccinated</th>
+                <th>Father Tag ID</th>
+                <th>Mother Tag ID</th>
                 <th>Birthday</th>
                 <th>Current Location</th>
                 <th>Notes</th>
@@ -56,3 +57,5 @@
     </div>
   </header>
 </div>
+
+<script src="/js/viewCattle.js"></script>

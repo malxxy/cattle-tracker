@@ -1,10 +1,10 @@
-// document.getElementByID("ranchID").style.display = "none";
+// create POST request when user submits data for cattle entry
 
 const livestockFormHandler = async (event) => {
   event.preventDefault();
 
   console.log("hello cows");
-
+//collect DOM data for request
   const ranchNumEl = document.querySelector("#ranchID");
   const ranchNumhtml = ranchNumEl.innerHTML;
   const ranchNum = parseInt(ranchNumhtml);
@@ -35,7 +35,7 @@ const livestockFormHandler = async (event) => {
     notes,
     vaccine
   );
-
+//POST request through controllers
   const response = await fetch("/api/addCattle", {
     method: "POST",
     body: JSON.stringify({
@@ -61,7 +61,7 @@ const livestockFormHandler = async (event) => {
     alert("Failed to add livestock");
   }
 };
-
+//call the function
 document
   .querySelector(".livestock-form")
   .addEventListener("submit", livestockFormHandler);
