@@ -38,14 +38,14 @@ Cattle.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'cattle',
-        key: 'id',
+        key: 'tagID',
       },
     },
     motherID: {
       type: DataTypes.INTEGER,
       references: {
         model: 'cattle',
-        key: 'id',
+        key: 'tagID',
       },
     },
     birthday: {
