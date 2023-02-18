@@ -23,13 +23,15 @@ Track location of your live-stock.
 
 - The agricultural industry has relied on generationally passed knowledge for financial success. HERD. will incorporate a rancher’s intuition with scalable data to continue to support America’s farmers. Rancher’s can track and analyze livestock for optimal results financially and for the health of the animal.
 
+- Navigate here to use the application: https://cattle-tracker.herokuapp.com/
+
 
 
 ## Learning Moments
 - Connecting Routes was a challenge that our team faced head on. It was a collaborative effort to continue to problem solve. 
 - Use of Partials was another new trial and error that allowed us to get some practice and learn from eachother. 
 - Lodash was a new addition that we implemented into our application, one of many npm packages that we looked at to try out during this deployment. 
-- Deploying to heroku was a newer process that we have only done a handful of times up to now. 
+- Deploying to heroku was a newer process that we have only done a handful of times up to now.
 
 ## Future Development
 Live Tracking Feature
@@ -63,6 +65,9 @@ Multiple Users on One Ranch
 
 Below are some steps to install and setup HERD.
 
+Link to deployed application: https://cattle-tracker.herokuapp.com/
+
+To run locally:
 - Clone the repository at https://github.com/malxxy/cattle-tracker
 - Install NPM Packages
 - Install dependencies
@@ -73,6 +78,8 @@ Below are some steps to install and setup HERD.
 ## Usage
 
 - As government and private organizations continue to increase observation of livestock markets, its increasingly more important that farmers modernize their approach to tracking and data. HERD. allows farmers to login, add and track data on their animals. 
+
+- Users can signup, their login session is saved so that when they revisit the webpage they will not have to login again. They can then view their cattle by clicking "View Cattle" in the dashboard and they can then add new cattle by clicking "Add Cattle" in their dashboard. NOTE: The add cattle feature is operating when the application is ran locally but not on the deployed website.
 
 ![Home Page](public/assets/img/Home_Page.png)
 ![Login](public/assets/img/Login.png)
