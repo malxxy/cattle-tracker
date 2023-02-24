@@ -1,3 +1,5 @@
+// JS from bootstrap to style navbar hamburger feature
+
 (function() {
   "use strict"; // Start of use strict
 

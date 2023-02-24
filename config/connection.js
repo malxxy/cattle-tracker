@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize");
-require("dotenv").config();
+const Sequelize = require("sequelize"); // require sequelize package
+require("dotenv").config(); // require .env file
 
-const sequelize = new Sequelize(
+const sequelize = new Sequelize( //connect to sequelize using name, user, and password from .env file
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
@@ -15,10 +15,10 @@ const sequelize = new Sequelize(
   {
   //   host: "us-cdbr-east-06.cleardb.net",
     // host: "127.0.0.1",
-    host: "us-cdbr-east-06.cleardb.net",
+    host: "us-cdbr-east-06.cleardb.net", // Heroku connection
     dialect: "mysql",
     port: 3306,
   }
 );
 
-module.exports = sequelize;
+module.exports = sequelize; // export module

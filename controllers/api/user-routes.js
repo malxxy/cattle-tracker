@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../models');
 const { Ranch } = require('../../models');
 
-// CREATE new user
+// CREATE new user (post route)
 router.post('/', async (req, res) => {
   try {
     
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
       ],
     });
 
-    req.session.save(() => {
+    req.session.save(() => { // save user sessionn to keep them logged in
       req.session.loggedIn = true;
       req.session.userId  = dbUserData.id;
       req.session.name = dbUserData.name;
@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+// Route to login user (post route)
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -63,7 +63,7 @@ router.post('/login', async (req, res) => {
       ],
     });
 
-    if (!dbUserData) {
+    if (!dbUserData) { // if user email does not match database, display error message to user
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
 
-    if (!validPassword) {
+    if (!validPassword) { // If the password is not valid, show message error
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
@@ -97,11 +97,11 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout
+// Route to Logout (post route)
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(204).end(); // end user session to log out and make data inaccessible until they log in again
     });
   } else {
     res.status(404).end();

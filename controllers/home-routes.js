@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const { Cattle } = require("../models");
 
-// GET homepage
+// GET homepage route
 router.get("/", async (req, res) => {
 
-  try {
+  try { // render homepage to user when they enter website
     res.render("homepage", {
       loggedIn: req.session.loggedIn,
       userid: req.session.userId,
@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
 });
 
 
-// GET Dashboard Page
+// GET Dashboard Page once user is proven to be logged in
 router.get("/dashboard", async (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/');

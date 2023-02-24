@@ -12,4 +12,4 @@ async function logoutevent() {
 }
 
 
-document.querySelector('#logout').addEventListener('click', logoutevent);
+document.querySelector('#logout').addEventListener('click', logoutevent); // when user selects logout, end session

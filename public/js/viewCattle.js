@@ -1,3 +1,5 @@
+// Add paramters to database so that users can search cows by location
+
 function searchLocation() {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
