@@ -49,9 +49,9 @@ const signupFormHandler = async (event) => {
 };
 
 document
-  .querySelector('#login-form')
+  .querySelector('#login-form') // when user selects on login button, initiate user login
   .addEventListener('submit', loginFormHandler);
 
 document
-  .querySelector('#signup-form')
+  .querySelector('#signup-form') // when user selects on sign up form, use post route to add user info to database
   .addEventListener('submit', signupFormHandler);

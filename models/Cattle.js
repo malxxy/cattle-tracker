@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Cattle extends Model {}
+class Cattle extends Model {} // class of "cattle" to extend the model class
 
 Cattle.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
+    id: { // cattle number id
+      type: DataTypes.INTEGER, // id automatically labeled
       allowNull: false,
-      primaryKey: true,
+      primaryKey: true, // identify as primary key
       autoIncrement: true,
     },
     ranchNum: {
@@ -19,7 +19,7 @@ Cattle.init(
       },
     },
     tagID: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER, // tag ID self-entered by user
       allowNull: false,
     },
     name: {

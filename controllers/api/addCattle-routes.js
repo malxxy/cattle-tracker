@@ -1,8 +1,9 @@
-const router = require('express').Router();
-const Cattle = require('../../models/Cattle');
-const _ = require('lodash');
+// Route to add cattle to the data base
+const router = require('express').Router(); // require express
+const Cattle = require('../../models/Cattle'); // require cattle model
+const _ = require('lodash'); // require lodash package
 
-//CREATE new livestock
+// CREATE new livestock (post route)
 router.post('/', async (req, res) => {
     console.log(req.body)
     console.log(req.body.sex)
@@ -34,5 +35,5 @@ router.post('/', async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = router; // export this route
 
